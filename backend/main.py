@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy import Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
+from flask_migrate import Migrate   
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todos.db'
@@ -13,6 +14,7 @@ class Base(DeclarativeBase):
   pass
 
 db = SQLAlchemy(app, model_class=Base)
+migrate = Migrate(app, db)    
 
 class TodoItem(db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
@@ -25,9 +27,6 @@ class TodoItem(db.Model):
             "title": self.title,
             "done": self.done
         }
-    
-with app.app_context():
-    db.create_all()
 
 INITIAL_TODOS = [
     TodoItem(title='Learn Flask'),
@@ -53,21 +52,6 @@ todo_list = [
 def get_todos():
     todos = TodoItem.query.all()
     return jsonify([todo.to_dict() for todo in todos])
-
-# def new_todo(data):
-#     if len(todo_list) == 0:
-#         id = 1
-#     else:
-#         id = 1 + max([todo['id'] for todo in todo_list])
-
-#     if 'title' not in data:
-#         return None
-    
-#     return {
-#         "id": id,
-#         "title": data['title'],
-#         "done": getattr(data, 'done', False),
-#     }
 
 def new_todo(data):
     return TodoItem(title=data['title'], 
