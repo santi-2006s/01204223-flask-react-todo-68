@@ -7,6 +7,7 @@ asttokens==3.0.0
 async-lru==2.0.4
 attrs==24.2.0
 babel==2.16.0
+bcrypt==5.0.0
 beautifulsoup4==4.12.3
 bleach==6.2.0
 blinker==1.9.0
@@ -21,10 +22,13 @@ cycler==0.12.1
 debugpy==1.8.9
 decorator==5.1.1
 defusedxml==0.7.1
+dnspython==2.8.0
 executing==2.1.0
 fastjsonschema==2.21.0
 Flask==3.1.2
+Flask-Bcrypt==1.0.1
 flask-cors==6.0.2
+Flask-JWT-Extended==4.7.1
 Flask-Migrate==4.1.0
 Flask-SQLAlchemy==3.1.1
 fonttools==4.55.0
@@ -84,6 +88,9 @@ psutil==6.1.0
 pure_eval==0.2.3
 pycparser==2.22
 Pygments==2.18.0
+PyJWT==2.12.1
+pymongo==4.16.0
+PyMySQL==1.1.2
 pyparsing==3.2.0
 python-dateutil==2.9.0.post0
 python-json-logger==2.0.7
