@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { vi } from 'vitest'
-import App from '../App.jsx'
+import TodoList from '../TodoList.jsx'
 
 const mockResponse = (body, ok = true) =>
   Promise.resolve({
@@ -8,16 +8,26 @@ const mockResponse = (body, ok = true) =>
     json: () => Promise.resolve(body),
 });
 
-describe('App', () => {
+vi.mock('../context/AuthContext', () => ({
+  useAuth: vi.fn(),
+}));
+
+import { useAuth } from '../context/AuthContext';
+describe('TodoList', () => {
   beforeEach(() => {
     vi.stubGlobal('fetch', vi.fn());
+    useAuth.mockReturnValue({
+      username: 'testuser',
+      login: vi.fn(),
+      logout: vi.fn(),
+    });
   });
 
   afterEach(() => {
     vi.resetAllMocks();
     vi.unstubAllGlobals();
   });
-
+  
   it('renders correctly', async () => {
     global.fetch.mockImplementationOnce(() =>
       mockResponse([
@@ -29,7 +39,7 @@ describe('App', () => {
       ]),
     );
 
-    render(<App />);
+    render(<TodoList />);
 
     expect(await screen.findByText('First todo')).toBeInTheDocument();
     expect(await screen.findByText('Second todo')).toBeInTheDocument();
