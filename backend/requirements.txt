@@ -22,6 +22,7 @@ cycler==0.12.1
 debugpy==1.8.9
 decorator==5.1.1
 defusedxml==0.7.1
+dnspython==2.8.0
 executing==2.1.0
 fastjsonschema==2.21.0
 Flask==3.1.2
@@ -68,7 +69,6 @@ MarkupSafe==3.0.3
 matplotlib==3.9.3
 matplotlib-inline==0.1.7
 mistune==3.0.2
-mysqlclient==2.2.8
 nbclient==0.10.1
 nbconvert==7.16.4
 nbformat==5.10.4
@@ -91,11 +91,16 @@ pure_eval==0.2.3
 pycparser==2.22
 Pygments==2.18.0
 PyJWT==2.12.1
+pymongo==4.16.0
+PyMySQL==1.1.2
 pyparsing==3.2.0
 pytest==9.0.2
 python-dateutil==2.9.0.post0
+python-dotenv==1.2.2
 python-json-logger==2.0.7
 pytz==2024.2
+pywin32==308
+pywinpty==2.0.14
 PyYAML==6.0.2
 pyzmq==26.2.0
 referencing==0.35.1
