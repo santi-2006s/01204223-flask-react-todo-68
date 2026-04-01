@@ -7,6 +7,7 @@ asttokens==3.0.0
 async-lru==2.0.4
 attrs==24.2.0
 babel==2.16.0
+bcrypt==5.0.0
 beautifulsoup4==4.12.3
 bleach==6.2.0
 blinker==1.9.0
@@ -24,6 +25,7 @@ defusedxml==0.7.1
 executing==2.1.0
 fastjsonschema==2.21.0
 Flask==3.1.2
+Flask-Bcrypt==1.0.1
 flask-cors==6.0.2
 Flask-JWT-Extended==4.7.1
 Flask-Migrate==4.1.0
