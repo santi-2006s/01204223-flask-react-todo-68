@@ -10,7 +10,7 @@ from models import TodoItem, Comment, db
 app = Flask(__name__)
 CORS(app)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///todos.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://USERNAME:PASSWORD@p1.secondtrain.org/DATABASENAME'
 app.config['JWT_SECRET_KEY'] = 'fdsjkfjioi2rjshr2345hrsh043j5oij5545'
 jwt = JWTManager(app)
 
