@@ -28,7 +28,7 @@ describe('TodoList', () => {
     vi.unstubAllGlobals();
   });
   
-  it('renders correctly', async () => {
+  it('renders correctly', async ()  => {
     global.fetch.mockImplementationOnce(() =>
       mockResponse([
         { id: 1, title: 'First todo', done: false, comments: [] },
