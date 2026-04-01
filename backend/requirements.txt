@@ -24,7 +24,6 @@ defusedxml==0.7.1
 executing==2.1.0
 fastjsonschema==2.21.0
 Flask==3.1.2
-flask-bcrypt==1.0.1
 flask-cors==6.0.2
 Flask-Migrate==4.1.0
 Flask-SQLAlchemy==3.1.1
@@ -89,7 +88,8 @@ pyparsing==3.2.0
 python-dateutil==2.9.0.post0
 python-json-logger==2.0.7
 pytz==2024.2
-pytest==8.3.4
+pywin32==308
+pywinpty==2.0.14
 PyYAML==6.0.2
 pyzmq==26.2.0
 referencing==0.35.1
@@ -97,7 +97,7 @@ requests==2.32.3
 rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 rpds-py==0.21.0
-scipy==1.14.1
+scipy==1.16.3
 Send2Trash==1.8.3
 setuptools==75.6.0
 simplejson==3.19.3
